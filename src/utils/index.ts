@@ -1,0 +1,1 @@
+export const getMissingFields = (object: any, ...fields: string[]) => fields.filter(field => !object[field]).join(', ');
