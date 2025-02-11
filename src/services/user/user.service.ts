@@ -39,7 +39,7 @@ export class UserService {
       select: ['id', 'firstName', 'lastName', 'email', 'createdAt', 'updatedAt'],
     });
     if (!user) {
-      throw new NotFoundException(`User with ID ${id} not found`);
+      throw ApiError.NotFound(`User with ID ${id} not found`);
     }
     return user;
   }
@@ -53,9 +53,11 @@ export class UserService {
   }
 
   async update(id: number, updateUserDto: UpdateUserDto): Promise<UserEntity> {
-    console.log(updateUserDto);
     const user = await this.findById(id);
-    console.log(user);
+    if (!user) {
+      throw ApiError.NotFound(`User with ID ${id} not found`);
+    }
+
     if (updateUserDto.password) {
       updateUserDto.password = await bcrypt.hash(updateUserDto.password, 10);
     }
