@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
-import { AuthController } from 'src/controllers/auth/auth.controller';
-import { AuthService } from 'src/services/auth/auth.service';
-import { UserModule } from './user.module';
+import { AuthController } from 'src/dataset/auth/auth.controller';
+import { AuthService } from 'src/dataset/auth/auth.service';
+import { UserModule } from '../users/user.module';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from 'src/guards/auth/auth.guard';
 import { config } from 'dotenv';

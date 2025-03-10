@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CreateUserDto } from 'src/dtos/user/create-user.dto';
-import { UpdateUserDto } from 'src/dtos/user/update-user.dto';
-import { UserEntity } from 'src/entities/user.entity';
+import { CreateUserDto } from './dtos/create-user.dto';
+import { UpdateUserDto } from './dtos/update-user.dto';
+import { UserEntity } from './user.entity';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { ApiError } from 'src/utils/ApiError';

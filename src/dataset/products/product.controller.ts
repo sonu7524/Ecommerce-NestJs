@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { CreateProductDto } from 'src/dtos/product/create-product.dto';
-import { UpdateProductDto } from 'src/dtos/product/update-product.dto';
-import { ProductService } from 'src/services/product/product.service';
+import { CreateProductDto } from './dtos/create-product.dto';
+import { UpdateProductDto } from './dtos/update-product.dto';
+import { ProductService } from './product.service';
 import { getMissingFields } from 'src/utils';
 import { ApiError } from 'src/utils/ApiError';
 
