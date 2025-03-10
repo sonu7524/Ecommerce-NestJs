@@ -39,9 +39,10 @@ jobs:
           ${{ secrets.DOCKER_HUB_USERNAME }}/ecommerce-api:latest
           ${{ secrets.DOCKER_HUB_USERNAME }}/ecommerce-api:${{ github.sha }}
 
+    # Option 1: Using johnbeynon/render-deploy-action
     - name: Deploy to Render
-      uses: render/render-action@v1
+      uses: johnbeynon/render-deploy-action@v0.0.8
       with:
-        api_key: ${{ secrets.RENDER_API_KEY }}
-        service_name: ecommerce-api
-        service_command: npm start
+        service-id: ${{ secrets.RENDER_SERVICE_ID }}
+        api-key: ${{ secrets.RENDER_API_KEY }}
+        wait-for-success: true
