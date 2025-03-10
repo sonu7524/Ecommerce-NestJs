@@ -36,5 +36,5 @@ jobs:
         context: .
         push: true
         tags: |
-          ${{ secrets.DOCKER_HUB_USERNAME }}/your-app-name:latest
-          ${{ secrets.DOCKER_HUB_USERNAME }}/your-app-name:${{ github.sha }}
+          ${{ secrets.DOCKER_HUB_USERNAME }}/ecommerce-api:latest
+          ${{ secrets.DOCKER_HUB_USERNAME }}/ecommerce-api:${{ github.sha }}
