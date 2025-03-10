@@ -2,9 +2,10 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { DataSource } from 'db/data-source';
-import { ProductModule } from './dataset/products/product.module';
-import { UserModule } from './dataset/users/user.module';
-import { AuthModule } from './dataset/auth/auth.module';
+import { AuthModule } from './features/auth/auth.module';
+import { UserModule } from './features/user/user.module';
+import { ProductModule } from './features/product/product.module';
+import { OrderModule } from './features/order/order.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { AuthModule } from './dataset/auth/auth.module';
     TypeOrmModule.forRootAsync(DataSource as TypeOrmModuleOptions),
     ProductModule,
     UserModule,
-    AuthModule
+    AuthModule,
+    OrderModule
   ]
 })
 export class AppModule { }
