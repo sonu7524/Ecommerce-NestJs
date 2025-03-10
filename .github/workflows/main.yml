@@ -45,13 +45,3 @@ jobs:
         api_key: ${{ secrets.RENDER_API_KEY }}
         service_name: ecommerce-api
         service_command: npm start
-        service_port: 3000
-        service_environment:
-          - key: NODE_ENV
-            value: production
-          - key: PORT
-            value: 3000
-          - key: DATABASE_URL
-            value: ${{ secrets.DATABASE_URL }}
-          - key: JWT_SECRET
-            value: ${{ secrets.JWT_SECRET }}
